@@ -8,7 +8,19 @@
  *
  * http://api.jqueryui.com/jQuery.widget/
  */
-(function( $, undefined ) {
+ 
+ (function( $, factory ) {
+
+	if ( typeof module === "object" && typeof module.exports === "object" ) {
+		if (!$) {
+			$ = require('jquery');
+		}
+		module.exports = factory($);
+	} else {
+		factory($);
+	}
+
+}(window.jQuery, function( $, undefined ) {
 
 var uuid = 0,
 	slice = Array.prototype.slice,
@@ -525,4 +537,4 @@ if ( $.uiBackCompat !== false ) {
 	};
 }
 
-})( jQuery );
+}));
