@@ -537,4 +537,6 @@ if ( $.uiBackCompat !== false ) {
 	};
 }
 
+return $.widget;
+
 }));
